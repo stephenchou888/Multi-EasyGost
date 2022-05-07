@@ -63,7 +63,7 @@ function check_root() {
 function check_new_ver() {
   ct_new_ver=$(wget --no-check-certificate -qO- -t2 -T3 https://api.github.com/repos/ginuerzh/gost/releases/latest | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g;s/v//g')
   if [[ -z ${ct_new_ver} ]]; then
-    ct_new_ver="2.11.1"
+    ct_new_ver="2.11.2"
     echo -e "${Error} gost 最新版本获取失败，正在下载v${ct_new_ver}版"
   else
     echo -e "${Info} gost 目前最新版本为 ${ct_new_ver}"
@@ -434,10 +434,10 @@ function cdn() {
   echo -e "请问您要设置的CDN传输类型: "
   echo -e "-----------------------------------"
   echo -e "[1] 不加密转发"
-  echo -e "[2] ws隧道-80"
-  echo -e "[3] wss隧道-443"
+  echo -e "[2] ws隧道"
+  echo -e "[3] wss隧道"
   echo -e "注意: 同一则转发，中转与落地传输类型必须对应！"
-  echo -e "此功能只需在中转机设置，落地机若用隧道，流量入口必须是80/443，之后套cdn即可"
+  echo -e "此功能只需在中转机设置"
   echo -e "-----------------------------------"
   read -p "请选择CDN转发传输类型: " numcdn
 
