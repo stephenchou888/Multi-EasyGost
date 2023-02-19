@@ -16,6 +16,8 @@
   `wget --no-check-certificate -O gost.sh https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/master/gost.sh && chmod +x gost.sh && ./gost.sh`  
 * 再次运行本脚本只需要输入`./gost.sh`回车即可  
 
+> 注：由于 gost v2.11.2 功能稳定，此脚本将一直采用该版本，后续不再跟随官方更新
+
 ## 功能
 
 ### 原脚本功能
@@ -33,9 +35,9 @@
 - 新支持传输类型
   - relay+ws
   - relay+wss
-- 落地机一键创建ss或socks5代理 (gost内置)
+- 落地机一键创建ss/socks5/http代理 (gost内置)
 - 支持多传输类型的多落地简单型均衡负载
-- 增加gost国内加速下载镜像
+- ~~增加gost国内加速下载镜像~~（被恶意刷流量导致我损失，不再提供）
 - 简单创建或删除gost定时重启任务
 - 脚本自动检查更新
 - 转发CDN自选节点ip
